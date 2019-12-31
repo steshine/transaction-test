@@ -24,7 +24,7 @@ public class User2ServiceImplTest {
 	@Test
 	public void testAdd() {
 		User2 user2 = new User2();
-		user2.setName("李四");
+		user2.setName("lisi");
 		user2Service.add(user2);
 	}
 

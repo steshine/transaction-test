@@ -69,11 +69,11 @@ public class TransactionPropagationExampleImpl implements TransactionPropagation
 	@Transactional(value="user1TM")
 	public void transaction_exception_notransaction_notransaction_user1(){
 		User1 user1=new User1();
-		user1.setName("张三");
+		user1.setName("user1");
 		user1Service.add(user1);
 		
 		User2 user2=new User2();
-		user2.setName("李四");
+		user2.setName("user2");
 		user2Service.add(user2);
 		throw new RuntimeException();
 	}
@@ -85,11 +85,11 @@ public class TransactionPropagationExampleImpl implements TransactionPropagation
 	@Transactional(value="user2TM")
 	public void transaction_exception_notransaction_notransaction_user2(){
 		User1 user1=new User1();
-		user1.setName("张三");
+		user1.setName("user1");
 		user1Service.add(user1);
 		
 		User2 user2=new User2();
-		user2.setName("李四");
+		user2.setName("user2");
 		user2Service.add(user2);
 		throw new RuntimeException();
 	}
@@ -98,12 +98,13 @@ public class TransactionPropagationExampleImpl implements TransactionPropagation
 	@Override
 	@Transactional
 	public void transaction_notransaction_notransaction_exception(){
-		User1 user1=new User1();
-		user1.setName("张三");
-		user1Service.add(user1);
-		
+
+
+		/*User1 user1=new User1();
+		user1.setName("user1");
+		user1Service.add(user1);*/
 		User2 user2=new User2();
-		user2.setName("李四");
+		user2.setName("user2-real");
 		user2Service.addException(user2);
 	}
 	
